@@ -1,5 +1,5 @@
 pub mod msgbox;
-pub mod openfiledlg;
+pub mod filedlg;
 
 // we don't want something like:
 //   winftw::dlg::msgbox::MsgboxIcon...
@@ -7,4 +7,4 @@ pub mod openfiledlg;
 //   winftw::dlg::MsgboxIcon...
 // so we import them here
 pub use self::msgbox::*;
-pub use self::openfiledlg::*;
+pub use self::filedlg::*;

@@ -6,24 +6,19 @@ use text::ToWide;
 //use self::winapi::windef::HWND;
 
 pub enum MsgboxIcon {
-	None,
-	Information,
-	Question,
-	Error,
-	Warning
+	None, Information, Question, Error, Warning
 }
 
 pub enum MsgboxButton {
-	Ok,
-	OkCancel,
-	AbortRetryIgnore,
-	YesNoCancel,
-	YesNo,
-	RetryCancel,
-	CancelRetryContinue
+	Ok,	OkCancel, AbortRetryIgnore, YesNoCancel, YesNo, RetryCancel, CancelRetryContinue
 }
 
-pub fn msgbox(message: &str, title: &str, icon: MsgboxIcon, btn: MsgboxButton) {
+pub enum MsgboxResult {
+	Ok,	Cancel,	Abort, Retry, Ignore, Yes, No
+}
+
+pub fn msgbox(message: &str, title: &str, icon: MsgboxIcon, btn: MsgboxButton) -> MsgboxResult {
+	let nullptr = std::ptr::null_mut();
 	// to prevent vec ptr get freed too early
 	let message_vec = message.to_wide_null();
 	let title_vec = title.to_wide_null();
@@ -46,8 +41,16 @@ pub fn msgbox(message: &str, title: &str, icon: MsgboxIcon, btn: MsgboxButton) {
 			MsgboxButton::CancelRetryContinue => winapi::MB_CANCELTRYCONTINUE,
 			_ => 0
 		};
-        user32::MessageBoxW(std::ptr::null_mut(),
-            sz_message, sz_title, dw_icon | dw_btn);
+        match user32::MessageBoxW(nullptr, sz_message, sz_title, dw_icon | dw_btn) {
+        	2 => MsgboxResult::Cancel,
+        	3 => MsgboxResult::Abort,
+        	4 => MsgboxResult::Retry,
+        	5 => MsgboxResult::Ignore,
+        	6 => MsgboxResult::Yes,
+        	7 => MsgboxResult::No,
+        	10 => MsgboxResult::Retry,
+        	_ => MsgboxResult::Ok
+        }
     }
 }
 

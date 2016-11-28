@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"mo",
+				"mode"
+			],
+			[
+				"FileDlg",
+				"FileDlgMode"
+			],
+			[
+				"Msg",
+				"MsgboxButton"
+			],
+			[
+				"MsgBo",
+				"MsgboxIcon"
+			],
+			[
+				"M",
+				"MsgboxIcon"
+			],
+			[
+				"MsgBox",
+				"MsgboxButton"
+			],
+			[
 				"mess",
 				"messageVec"
 			],
@@ -96,45 +120,11 @@
 	"buffers":
 	[
 		{
-			"file": "src/main.rs",
+			"file": "src/dlg/filedlg.rs",
 			"settings":
 			{
-				"buffer_size": 263,
+				"buffer_size": 2936,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/dlg/mod.rs",
-			"settings":
-			{
-				"buffer_size": 957,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/winuser.rs",
-			"settings":
-			{
-				"buffer_size": 91455,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/text/mod.rs",
-			"settings":
-			{
-				"buffer_size": 459,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Downloads/Simple_Window_In_Rust_src/src/main.rs",
-			"settings":
-			{
-				"buffer_size": 2629,
 				"line_ending": "Windows"
 			}
 		}
@@ -279,28 +269,64 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/C/Users/Raymai/Desktop/winftw",
+		"/C/Users/Raymai/Desktop/winftw/src",
+		"/C/Users/Raymai/Desktop/winftw/src/dlg",
+		"/C/Users/Raymai/Desktop/winftw/src/err",
+		"/C/Users/Raymai/Desktop/winftw/src/ole",
+		"/C/Users/Raymai/Desktop/winftw/src/text",
+		"/C/Users/Raymai/Desktop/winftw/target"
+	],
 	"file_history":
 	[
+		"/C/Users/Raymai/Desktop/winftw/src/text/mod.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/main.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/dlg/filedlg.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/dlg/msgbox.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/ole/hresult.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/err/mod.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/lib.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/dlg/mod.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/ole/native.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/dlg/openfiledlg.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/ole/mod.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/shobjidl.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.1.12/rust/src/liblibc/lib.rs",
-		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/user32-sys-0.1.2/src/lib.rs",
-		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/windowsx.rs",
-		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/windef.rs",
-		"/C/Users/Raymai/Desktop/fuck.rs",
+		"/D/Programming/Multi/JpnNumText/src/JpnNumText.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/kernel32-sys-0.1.4/src/lib.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/user32-sys-0.1.2/src/lib.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/objidl.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/macros.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/objbase.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/windef.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/minwindef.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/lib.rs",
+		"/C/Users/Raymai/Desktop/winftw/Cargo.toml",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/objidlbase.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/oaidl.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/olectl.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-build-0.1.1/src/lib.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/combaseapi.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/dlg/openfiledlg",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/winuser.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/d3d9.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/dxgi.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/ntsecapi.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/sspi.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/winbase.rs",
+		"/C/Users/Raymai/Desktop/winftw/winftw.sublime-project",
+		"/D/Downloads/Simple_Window_In_Rust_src/src/main.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/windowsx.rs",
+		"/C/Users/Raymai/Desktop/fuck.rs",
 		"/C/Users/Raymai/.cargo/registry/index/github.com-1ecc6299db9ec823/wi/na/winapi",
 		"/C/Users/Raymai/Desktop/win32msgbox/src/main.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/text/mod.rs",
-		"/D/Downloads/Simple_Window_In_Rust_src/src/main.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/dlg/msgbox.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/main.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/english/mod.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/jpn-num-text/src/lib.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/jpn-num-text/src/main.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/dlg/mod.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/lib.rs",
 		"/C/Users/Raymai/Desktop/win32msgbox/Cargo.toml",
-		"/C/Users/Raymai/Desktop/winftw/Cargo.toml",
-		"/C/Users/Raymai/Desktop/winftw/src/main.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/japanese/greetings.rs",
 		"/C/Users/Raymai/Desktop/win32msgbox.rs",
 		"/C/Users/Raymai/Desktop/turn off screen.c",
@@ -338,7 +364,6 @@
 		"/D/Portable Apps/Sublime Text/Data/Packages/Default/Preferences.sublime-settings",
 		"/D/Portable Apps/Sublime Text/Data/Packages/User/Default.sublime-theme",
 		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/japanese/farewells",
-		"/D/Programming/Multi/JpnNumText/src/JpnNumText.rs",
 		"/D/Programming/Multi/JpnNumText/Demo_Rust/Demo.rs",
 		"/C/Users/Raymai/Desktop/wtftw/wtftw/src/wtftw.rs",
 		"/C/Users/Raymai/Desktop/wtftw/wtftw/core/src/wtftw.rs",
@@ -360,7 +385,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 92.0,
 		"where_history":
 		[
 		]
@@ -370,6 +395,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"IModalWindow",
+			"IFileDialog",
+			"IFileDia",
+			"GUID",
+			"DWORD",
+			"IFileDialog",
 			"to_wstring",
 			"next_ch",
 			"\" ,",
@@ -409,144 +440,31 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/main.rs",
+					"file": "src/dlg/filedlg.rs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 263,
+						"buffer_size": 2936,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								247,
-								258
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rust/Rust.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/dlg/mod.rs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 957,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								794,
-								794
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rust/Rust.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/winuser.rs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 91455,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11290,
-								11305
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rust/Rust.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 4851.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/text/mod.rs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 459,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								296,
-								296
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rust/Rust.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/D/Downloads/Simple_Window_In_Rust_src/src/main.rs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2629,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								552,
-								552
+								1573,
+								1573
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Rust/Rust.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 1728.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
