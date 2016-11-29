@@ -129,8 +129,6 @@ fn my_show(dt: &mut MyData) -> Result<(), WinftwErr> {
 					hr = fd.GetResults(&mut psia as *mut *mut IShellItemArray);
 					if hr.failed() { return Err(my_err("fd.GetResults", hr)) }
 
-					// HACK: WinAPI doesn't support IShellItemArray yet, so...
-					let psia = psia as *mut extend::_IShellItemArray;
 					let ref mut sia = *psia;
 					let mut count: DWORD = 0;
 					hr = sia.GetCount(&mut count);

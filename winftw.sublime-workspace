@@ -144,10 +144,28 @@
 	"buffers":
 	[
 		{
-			"file": "Cargo.toml",
+			"file": "src/ole/mod.rs",
 			"settings":
 			{
-				"buffer_size": 259,
+				"buffer_size": 113,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/dlg/filedlg.rs",
+			"settings":
+			{
+				"buffer_size": 4749,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Raymai/Desktop/winapi-rs/Cargo.toml",
+			"settings":
+			{
+				"buffer_size": 12025,
 				"line_ending": "Unix"
 			}
 		}
@@ -299,30 +317,39 @@
 		"/C/Users/Raymai/Desktop/winftw/src/dlg",
 		"/C/Users/Raymai/Desktop/winftw/src/err",
 		"/C/Users/Raymai/Desktop/winftw/src/ole",
-		"/C/Users/Raymai/Desktop/winftw/src/text",
-		"/C/Users/Raymai/Desktop/winftw/target"
+		"/C/Users/Raymai/Desktop/winftw/src/text"
 	],
 	"file_history":
 	[
-		"/C/Users/Raymai/Desktop/winftw/src/dlg/filedlg.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/ole/extend.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/main.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/ole/mod.rs",
-		"/C/Users/Raymai/Desktop/winapi-rs/src/shobjidl.rs",
+		"/C/Users/Raymai/Desktop/winapi-rs/build.rs",
 		"/C/Users/Raymai/Desktop/winapi-rs/Cargo.toml",
 		"/C/Users/Raymai/Desktop/winftw/Cargo.toml",
-		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.4/src/macros.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/ole/native.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/ole/hresult.rs",
+		"/C/Users/Raymai/Desktop/winapi-rs/src/shared/minwindef.rs",
+		"/C/Users/Raymai/Desktop/winapi-rs/src/shared/mod.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/main.rs",
+		"/C/Users/Raymai/Desktop/winapi-rs/src/shobjidl.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/text/mod.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/dlg/filedlg.rs",
+		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/english/mod.rs",
+		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/lib.rs",
+		"/C/Users/Raymai/Desktop/winapi-rs/src/lib.rs",
+		"/C/Users/Raymai/Desktop/winapi-rs/src/shared/ntdef.rs",
+		"/C/Users/Raymai/Desktop/winapi-rs/src/vc/mod.rs",
+		"/C/Users/Raymai/Desktop/winapi-rs/src/um/mod.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.4/src/lib.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.4/src/shobjidl.rs",
+		"/C/Users/Raymai/Desktop/winapi-rs/lib/uuid/src/lib.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/ole/mod.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/ole/extend.rs",
+		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.4/src/macros.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.4/src/unknwnbase.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/macros.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.4/src/shlobj.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/shobjidl.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/ole/native.rs",
 		"/C/Users/Raymai/Desktop/fuck.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/text/mod.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/dlg/msgbox.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/ole/hresult.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/err/mod.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/lib.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/dlg/mod.rs",
@@ -354,7 +381,6 @@
 		"/C/Users/Raymai/.cargo/registry/index/github.com-1ecc6299db9ec823/wi/na/winapi",
 		"/C/Users/Raymai/Desktop/win32msgbox/src/main.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/main.rs",
-		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/english/mod.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/jpn-num-text/src/lib.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/jpn-num-text/src/main.rs",
 		"/C/Users/Raymai/Desktop/win32msgbox/Cargo.toml",
@@ -383,7 +409,6 @@
 		"/C/Users/Raymai/Desktop/rust crates and modules/JpnNumText/src/lib.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/JpnNumText/src/JpnNumText/mod.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/JpnNumText/src/JpnNumText/JpnNumText.rs",
-		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/lib.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/japanese/mod.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/JpnNumText/src/JpnNumText.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/japanese/farewells.rs",
@@ -426,6 +451,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"IShellItemArray",
 			" = 0;",
 			"virtual HRESULT STDMETHODCALLTYPE ",
 			"IConte",
@@ -478,16 +504,72 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Cargo.toml",
+					"file": "src/ole/mod.rs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 259,
+						"buffer_size": 113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								113,
+								113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rust/Rust.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/dlg/filedlg.rs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4749,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2344,
+								2344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rust/Rust.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1890.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Raymai/Desktop/winapi-rs/Cargo.toml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12025,
 						"regions":
 						{
 						},

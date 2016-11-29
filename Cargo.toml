@@ -5,9 +5,9 @@ authors = ["Raymai97 <cheeboonray@gmail.com>"]
 
 [dependencies]
 libc = "0.1.10"
-winapi = "0.2.4"
 user32-sys = "0.1.2"
 kernel32-sys = "0.1.4"
 
-[replace]
-"winapi:0.2.4" = { path = 'C:/Users/Raymai/Desktop/winapi-rs' }
+[dependencies.winapi]
+version = "0.2.8"
+path = "C:/Users/Raymai/Desktop/winapi-rs"
