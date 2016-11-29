@@ -12,12 +12,14 @@ pub struct FileDlgNameSpec {
 }
 
 pub struct FileDlg {
+	title: &'static str,
 	namespecs: Vec<FileDlgNameSpec>
 }
 
 impl FileDlg {
 	pub fn new() -> FileDlg {
 		FileDlg {
+			title: "",
 			namespecs: Vec::new()
 		}
 	}
@@ -25,11 +27,15 @@ impl FileDlg {
 	pub fn add_filter(&mut self, name: &'static str, spec: &'static str) {
 		self.namespecs.push(
 			FileDlgNameSpec { name: name, spec: spec }
-		)
+		);
+	}
+
+	pub fn set_title(&mut self, title: &'static str) {
+		self.title = title;
 	}
 
 	pub fn ask_for_file(&self) -> Result<Option<String>, WinftwErr> {
-		let mut dt = MyData::new(MyMode::OpenFile, &self.namespecs);
+		let mut dt = MyData::new(MyMode::OpenFile, &self.title, &self.namespecs);
 		match my_show(&mut dt) {
 			Err(x) => Err(x),
 			_ => {
@@ -40,7 +46,7 @@ impl FileDlg {
 	}
 
 	pub fn ask_for_files(&self) -> Result<Option<Vec<String>>, WinftwErr> {
-		let mut dt = MyData::new(MyMode::OpenFiles, &self.namespecs);
+		let mut dt = MyData::new(MyMode::OpenFiles, &self.title, &self.namespecs);
 		match my_show(&mut dt) {
 			Err(x) => Err(x),
 			_ => {
@@ -51,7 +57,7 @@ impl FileDlg {
 	}
 
 	pub fn ask_for_dir_path(&self) -> Result<Option<String>, WinftwErr> {
-		let mut dt = MyData::new(MyMode::OpenDir, &self.namespecs);
+		let mut dt = MyData::new(MyMode::OpenDir, &self.title, &self.namespecs);
 		match my_show(&mut dt) {
 			Err(x) => Err(x),
 			_ => {
@@ -62,7 +68,7 @@ impl FileDlg {
 	}
 
 	pub fn ask_for_save_path(&self) -> Result<Option<String>, WinftwErr> {
-		let mut dt = MyData::new(MyMode::SaveFile, &self.namespecs);
+		let mut dt = MyData::new(MyMode::SaveFile, &self.title, &self.namespecs);
 		match my_show(&mut dt) {
 			Err(x) => Err(x),
 			_ => {
@@ -88,12 +94,13 @@ struct MyRawNameSpec {
 
 struct MyData {
 	mode: MyMode,
-	results: Vec<String>,
-	rns_vec: Vec<MyRawNameSpec>
+	title: Vec<WCHAR>,
+	rns_vec: Vec<MyRawNameSpec>,
+	results: Vec<String>
 }
 
 impl MyData {
-	pub fn new(mode: MyMode, namespecs: &Vec<FileDlgNameSpec>) -> MyData {
+	pub fn new(mode: MyMode, title: &'static str, namespecs: &Vec<FileDlgNameSpec>) -> MyData {
 		use text::ToWide;
 
 		let make_rns_vec = || -> Vec<MyRawNameSpec> {
@@ -103,23 +110,24 @@ impl MyData {
 					name: ns.name.to_wide_null(),
 					spec: ns.spec.to_wide_null()
 				});
-			}
-			v
+			} v
 		};
-
 		MyData {
 			mode: mode,
-			results: Vec::new(),
-			rns_vec: make_rns_vec()
+			title: title.to_wide_null(),
+			rns_vec: make_rns_vec(),
+			results: Vec::new()
 		}
 	}
 }
 
 fn my_show(dt: &mut MyData) -> Result<(), WinftwErr> {
 	use self::winapi::*;
-	use ole::*;
+	use ole::native::*;
+	use ole::hresult::OkNotOk;
 	use text::string_from_wide_null;
-	
+	use text::ToWide;
+
 	let nullptr = std::ptr::null_mut();
 	unsafe {
 		let mut hr = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
@@ -160,11 +168,17 @@ fn my_show(dt: &mut MyData) -> Result<(), WinftwErr> {
 		}
 		hr = fd.SetFileTypes(rg_spec.len() as DWORD, rg_spec.as_ptr());
 		if hr.failed() { return Err(my_err("fd.SetFileTypes", hr)) }
+		// HACK: Auto append file ext
+		fd.SetDefaultExtension("".to_wide_null().as_ptr());
+		// Set file dialog title
+		if dt.title.len() > 0 {
+			fd.SetTitle(dt.title.as_ptr());
+		}
 		// If user didn't cancel...
 		if fd.Show(nullptr as HWND).succeeded() {
 			match dt.mode {
 				MyMode::OpenFiles => {
-					/* Cast as we need IFileOpenDialog feature */
+					// Cast as IFileOpenDialog for GetResults()
 					let pfd = pfd as *mut IFileOpenDialog;
 					let ref mut fd = *pfd;
 					let mut psia = nullptr as *mut IShellItemArray;					
@@ -204,6 +218,8 @@ fn my_show(dt: &mut MyData) -> Result<(), WinftwErr> {
 }
 
 fn my_err(place: &'static str, hr: HRESULT) -> WinftwErr {
+	use ole::hresult::OkNotOk;
+	
 	WinftwErr {
 		code: hr as i64,
 		message: format!("Error at {}\n\n{}", place, hr.to_string())
