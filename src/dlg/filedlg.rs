@@ -23,9 +23,9 @@ impl FileDlg {
 	}
 
 	pub fn add_filter(&mut self, name: &'static str, spec: &'static str) {
-		self.namespecs.push( FileDlgNameSpec {
-			name: name, spec: spec
-		} );
+		self.namespecs.push(
+			FileDlgNameSpec { name: name, spec: spec }
+		)
 	}
 
 	pub fn ask_for_file(&self) -> Result<Option<String>, WinftwErr> {
@@ -33,8 +33,8 @@ impl FileDlg {
 		match my_show(&mut dt) {
 			Err(x) => Err(x),
 			_ => {
-				if dt.result.len() == 0 { Ok(None) }
-				else { Ok(Some(dt.result[0].clone())) }
+				if dt.results.len() == 0 { Ok(None) }
+				else { Ok(Some(dt.results[0].clone())) }
 			}
 		}
 	}
@@ -44,8 +44,8 @@ impl FileDlg {
 		match my_show(&mut dt) {
 			Err(x) => Err(x),
 			_ => {
-				if dt.result.len() == 0 { Ok(None) }
-				else { Ok(Some(dt.result)) }
+				if dt.results.len() == 0 { Ok(None) }
+				else { Ok(Some(dt.results)) }
 			}
 		}
 	}
@@ -55,8 +55,8 @@ impl FileDlg {
 		match my_show(&mut dt) {
 			Err(x) => Err(x),
 			_ => {
-				if dt.result.len() == 0 { Ok(None) }
-				else { Ok(Some(dt.result[0].clone())) }
+				if dt.results.len() == 0 { Ok(None) }
+				else { Ok(Some(dt.results[0].clone())) }
 			}
 		}
 	}
@@ -66,8 +66,8 @@ impl FileDlg {
 		match my_show(&mut dt) {
 			Err(x) => Err(x),
 			_ => {
-				if dt.result.len() == 0 { Ok(None) }
-				else { Ok(Some(dt.result[0].clone())) }
+				if dt.results.len() == 0 { Ok(None) }
+				else { Ok(Some(dt.results[0].clone())) }
 			}
 		}
 	}
@@ -88,28 +88,30 @@ struct MyRawNameSpec {
 
 struct MyData {
 	mode: MyMode,
-	result: Vec<String>,
-	raw_ns: Vec<MyRawNameSpec>
+	results: Vec<String>,
+	rns_vec: Vec<MyRawNameSpec>
 }
 
 impl MyData {
 	pub fn new(mode: MyMode, namespecs: &Vec<FileDlgNameSpec>) -> MyData {
 		use text::ToWide;
-		
-		let mut dt = MyData {
+
+		let make_rns_vec = || -> Vec<MyRawNameSpec> {
+			let mut v = Vec::with_capacity(namespecs.len());
+			for ns in namespecs {
+				v.push( MyRawNameSpec {
+					name: ns.name.to_wide_null(),
+					spec: ns.spec.to_wide_null()
+				});
+			}
+			v
+		};
+
+		MyData {
 			mode: mode,
-			result: Vec::new(),
-			raw_ns: Vec::new()
-		};
-		for i in 0..namespecs.len() {
-			dt.raw_ns.push(
-				MyRawNameSpec {
-					name: namespecs[i].name.to_wide_null(),
-					spec: namespecs[i].spec.to_wide_null()
-				}
-			);
-		};
-		return dt
+			results: Vec::new(),
+			rns_vec: make_rns_vec()
+		}
 	}
 }
 
@@ -149,17 +151,15 @@ fn my_show(dt: &mut MyData) -> Result<(), WinftwErr> {
 		hr = fd.SetOptions(fd_options);
 		if hr.failed() { return Err(my_err("fd.SetOptions", hr)) }
 		// Set file type filters
-		let mut rg_spec: Vec<COMDLG_FILTERSPEC> = Vec::new();
-		for i in 0..dt.raw_ns.len() {
+		let mut rg_spec: Vec<COMDLG_FILTERSPEC> = Vec::with_capacity(dt.rns_vec.len());
+		for rns in &dt.rns_vec {
 			rg_spec.push(COMDLG_FILTERSPEC {
-				pszName: dt.raw_ns[i].name.as_ptr(),
-				pszSpec: dt.raw_ns[i].spec.as_ptr()
+				pszName: rns.name.as_ptr(),
+				pszSpec: rns.spec.as_ptr()
 			});
-		};
-		if rg_spec.len() > 0 {
-			hr = fd.SetFileTypes(rg_spec.len() as DWORD, rg_spec.as_ptr());
-			if hr.failed() { return Err(my_err("fd.SetFileTypes", hr)) }
 		}
+		hr = fd.SetFileTypes(rg_spec.len() as DWORD, rg_spec.as_ptr());
+		if hr.failed() { return Err(my_err("fd.SetFileTypes", hr)) }
 		// If user didn't cancel...
 		if fd.Show(nullptr as HWND).succeeded() {
 			match dt.mode {
@@ -182,7 +182,7 @@ fn my_show(dt: &mut MyData) -> Result<(), WinftwErr> {
 						let mut wsz = nullptr as LPWSTR;
 						hr = si.GetDisplayName(SIGDN_FILESYSPATH, &mut wsz);
 						if hr.failed() { return Err(my_err("si.GetDisplayName", hr)) }
-						dt.result.push(string_from_wide_null(wsz));
+						dt.results.push(string_from_wide_null(wsz));
 					}
 				},
 				_ => {
@@ -193,7 +193,7 @@ fn my_show(dt: &mut MyData) -> Result<(), WinftwErr> {
 					let mut wsz = nullptr as LPWSTR;
 					hr = si.GetDisplayName(SIGDN_FILESYSPATH, &mut wsz);
 					if hr.failed() { return Err(my_err("GetDisplayName", hr)) }
-					dt.result.push(string_from_wide_null(wsz));
+					dt.results.push(string_from_wide_null(wsz));
 				}
 			}
 		}
