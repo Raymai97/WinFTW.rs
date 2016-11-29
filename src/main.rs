@@ -14,7 +14,7 @@ fn demo_save_file() {
 	let mut fd = FileDlg::new();
 	fd.add_filter("Web Pages", "*.htm;*.html");
 	fd.add_filter("Batch Files", "*.bat;*.cmd");
-	fd.set_title("自定义标题");
+	fd.set_title("Just a demo, it would not save anything");
 	match fd.ask_for_save_path() {
 		Err(x) => {
 			msgbox!(Error => &x.message, "Error!");
