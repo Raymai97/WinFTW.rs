@@ -22,6 +22,12 @@ pub const IID_IFileDialog: IID = IID {
     Data4: [0x85, 0xf1, 0xe4, 0x07, 0x5d, 0x13, 0x5f, 0xc8]
 };
 
+#[allow(non_upper_case_globals)]
+pub const IID_IFileOpenDialog: IID = IID {
+    Data1: 0xd57c7288, Data2: 0xd4ad, Data3: 0x4768,
+    Data4: [0xbe, 0x02, 0x9d, 0x96, 0x95, 0x32, 0xd9, 0x60]
+};
+
 #[link(name = "ole32")]
 extern "system" {
 	pub fn CoInitializeEx(
