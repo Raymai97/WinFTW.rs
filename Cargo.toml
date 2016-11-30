@@ -10,4 +10,7 @@ kernel32-sys = "0.1.4"
 
 [dependencies.winapi]
 version = "0.2.8"
+# To work offline, change 'path' to yours.
+# Otherwise, comment 'path' and uncomment 'git' to use it.
 path = "C:/Users/Raymai/Desktop/winapi-rs"
+# git = "https://github.com/Raymai97/winapi-rs.git"

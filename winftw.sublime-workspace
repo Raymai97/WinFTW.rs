@@ -184,12 +184,12 @@
 	"buffers":
 	[
 		{
-			"file": "src/main.rs",
+			"file": "Cargo.toml",
 			"settings":
 			{
-				"buffer_size": 1232,
+				"buffer_size": 405,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -344,11 +344,14 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Raymai/Desktop/winftw/src/main.rs",
+		"/C/Users/Raymai/Desktop/msgboxTest.rs",
+		"/C/Users/Raymai/Desktop/winftw/src/text/mod.rs",
+		"/C/Users/Raymai/Desktop/fuck.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/dlg/filedlg.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/ole/hresult.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/ole/mod.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/dlg/mod.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/main.rs",
 		"/C/Users/Raymai/Desktop/winftw/Cargo.toml",
 		"/C/Users/Raymai/Desktop/winapi-rs/src/shtypes.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.1.12/rust/src/liblibc/lib.rs",
@@ -361,7 +364,6 @@
 		"/C/Users/Raymai/Desktop/winftw/src/ole/native.rs",
 		"/C/Users/Raymai/Desktop/winapi-rs/src/shared/minwindef.rs",
 		"/C/Users/Raymai/Desktop/winapi-rs/src/shared/mod.rs",
-		"/C/Users/Raymai/Desktop/winftw/src/text/mod.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/english/mod.rs",
 		"/C/Users/Raymai/Desktop/rust crates and modules/phrases/src/lib.rs",
 		"/C/Users/Raymai/Desktop/winapi-rs/src/lib.rs",
@@ -377,7 +379,6 @@
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/macros.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.4/src/shlobj.rs",
 		"/C/Users/Raymai/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.2.8/src/shobjidl.rs",
-		"/C/Users/Raymai/Desktop/fuck.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/dlg/msgbox.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/err/mod.rs",
 		"/C/Users/Raymai/Desktop/winftw/src/lib.rs",
@@ -557,28 +558,27 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/main.rs",
+					"file": "Cargo.toml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1232,
+						"buffer_size": 405,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								386,
-								386
+								405,
+								405
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rust/Rust.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 108.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
